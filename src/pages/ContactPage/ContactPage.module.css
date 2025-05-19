@@ -1,0 +1,31 @@
+/* src/pages/ContactPage/ContactPage.module.css */
+.contactPage {
+  padding-top: 120px; /* Account for fixed navbar */
+  padding-bottom: 80px;
+  background-color: #f4f4f4; /* Light background for the page */
+  min-height: 100vh;
+}
+
+.pageTitle {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.8rem;
+  color: var(--secondary-color);
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+@media (min-width: 992px) {
+  .contactGrid {
+    grid-template-columns: 3fr 2fr; /* Form takes more space */
+  }
+}
+
+.formWrapper,
+.infoWrapper {
+  /* Styles for wrappers if needed, e.g., ensuring consistent height */
+}

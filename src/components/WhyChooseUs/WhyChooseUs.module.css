@@ -1,0 +1,50 @@
+/* src/components/WhyChooseUs/WhyChooseUs.module.css */
+.whyChooseUs {
+  background-color: #f4f4f4; /* Light grey background */
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--secondary-color); /* Dark heading on light bg */
+}
+
+.reasonsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.reasonItem {
+  background-color: var(--background-light);
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reasonItem:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.reasonIcon {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.reasonTitle {
+  font-size: 1.35rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.reasonText {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 0;
+  text-align: center; /* Override global justify for card paragraphs */
+}

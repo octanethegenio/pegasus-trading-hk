@@ -1,0 +1,81 @@
+/* src/components/About/About.module.css */
+.about {
+  background-color: var(--background-light);
+}
+
+.about h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.aboutContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start; /* Align items to the start of the grid area */
+}
+
+.aboutText p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.aboutFeatures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  /* margin-top: 20px; */ /* Removing this to see if it improves top alignment with the text block */
+}
+
+.featureItem {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+  border: 1px solid #eee;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.featureItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  border-color: var(--primary-color);
+}
+
+.featureIcon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.featureItem h3 {
+  font-size: 1.3rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.featureItem p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0;
+  text-align: center; /* Revert to center as per user clarification */
+}
+
+
+@media (min-width: 992px) {
+  .aboutContent {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+  }
+  .aboutText {
+     padding-right: 20px; /* Add some space between text and features */
+  }
+}
+
+/* Tablet-specific layout for 2x2 grid */
+@media (min-width: 550px) and (max-width: 991px) {
+  .aboutFeatures {
+    grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
+  }
+}

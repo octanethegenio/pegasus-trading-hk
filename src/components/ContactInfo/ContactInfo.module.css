@@ -1,0 +1,71 @@
+/* src/components/ContactInfo/ContactInfo.module.css */
+.contactInfoContainer {
+  padding: 40px;
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.contactInfoContainer h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: var(--text-light);
+}
+.introText {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.icon {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-right: 20px;
+  margin-top: 5px; /* Align better with text */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.infoItem h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--text-light);
+}
+
+.infoItem p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d0d0d0;
+  margin-bottom: 5px;
+}
+.infoItem p:last-child {
+    margin-bottom: 0;
+}
+
+.infoItem a {
+  color: #e0e0e0;
+  transition: color 0.3s ease;
+}
+
+.infoItem a:hover {
+  color: var(--primary-color);
+}
+
+.mapContainer {
+    margin-top: 30px;
+}
+.mapContainer h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+.mapContainer iframe {
+    border-radius: 6px;
+}

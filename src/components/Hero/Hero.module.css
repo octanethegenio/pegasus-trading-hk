@@ -1,0 +1,47 @@
+/* src/components/Hero/Hero.module.css */
+.hero {
+  /* Default solid background if no image */
+  background-color: var(--secondary-color); 
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-light);
+  padding: 100px 0; /* Add padding for content */
+  
+  /* Uncomment if using background image */
+  /* background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+}
+
+.heroContent {
+  max-width: 800px;
+}
+
+.heroContent h1 {
+  font-size: 3.5rem; /* Larger for hero */
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  line-height: 1.2;
+}
+
+.heroContent p {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  color: #e0e0e0; /* Lighter than default p on dark */
+  text-align: center; /* Override global justify for hero paragraph */
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+  }
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+  .heroContent p {
+    font-size: 1rem;
+  }
+}

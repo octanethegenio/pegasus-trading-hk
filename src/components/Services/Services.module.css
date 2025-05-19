@@ -1,0 +1,64 @@
+/* src/components/Services/Services.module.css */
+.services {
+  text-align: center;
+}
+.services h2 {
+  margin-bottom: 50px;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.serviceCard {
+  background: #2a2a2a; /* Slightly lighter than section-dark bg */
+  padding: 30px 25px;
+  border-radius: 10px;
+  border: 1px solid #444; /* Subtle initial border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.serviceCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-color: var(--primary-color);
+  background: #333; /* Slightly lighten background on hover */
+}
+
+.serviceIcon {
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  display: inline-block; /* To center */
+}
+
+.serviceCard h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--text-light);
+}
+
+.serviceCard p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #b0b0b0; /* Lighter text on dark card */
+  margin-bottom: 0;
+  text-align: center; /* Override global justify for card paragraphs */
+}
+
+/* Tablet-specific layout */
+@media (min-width: 600px) and (max-width: 899px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
+  }
+}
+/* For slightly wider tablets / smaller desktops, allow 3 columns if they fit */
+@media (min-width: 900px) {
+  .servicesGrid {
+    /* auto-fit will try for 3 columns if 3*280px fits */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
