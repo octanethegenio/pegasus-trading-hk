@@ -13,15 +13,21 @@ const HomePage = () => {
   useEffect(() => {
     if (location.hash) {
       const sectionId = location.hash.substring(1); // Remove #
-      scroller.scrollTo(sectionId, {
-        smooth: true,
-        duration: 500,
-        offset: -80, // Adjust as per your navbar height
-        spy: true,
-        exact: 'true',
-      });
+      // Add a small delay to ensure the page and elements are rendered before scrolling
+      setTimeout(() => {
+        scroller.scrollTo(sectionId, {
+          smooth: true,
+          duration: 500,
+          offset: -80, // Adjust as per your navbar height
+          spy: true,
+          exact: 'true',
+        });
+      }, 100); // 100ms delay, adjust if needed
     } else {
-      window.scrollTo(0, 0); // Scroll to top if no hash
+      // Scroll to top if no hash, but only if not already at top to avoid jitter on initial load
+      if (window.scrollY !== 0) {
+        window.scrollTo(0, 0);
+      }
     }
   }, [location.hash]); // Rerun effect if hash changes
 
