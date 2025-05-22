@@ -1,15 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.dbfe3342.css",
-    "main.js": "/static/js/main.9771bd69.js",
+    "main.css": "/static/css/main.c36d7b63.css",
+    "main.js": "/static/js/main.aad6c95d.js",
+    "static/media/prod-twsbuds.png": "/static/media/prod-twsbuds.a11bc0e0362fca54b23a.png",
+    "static/media/prod-powerbank.png": "/static/media/prod-powerbank.3e633680ff33a0a8154b.png",
+    "static/media/prod-maxpods.png": "/static/media/prod-maxpods.2cb44386e5798319c3dd.png",
+    "static/media/prod-ancmax.png": "/static/media/prod-ancmax.f69f5cdc127529c012e0.png",
+    "static/media/prod-20wcharg.png": "/static/media/prod-20wcharg.0847b904b376f261f609.png",
+    "static/media/prod-chargersmart.png": "/static/media/prod-chargersmart.14ad74bab6e6d8795f0c.png",
     "static/media/logo.png": "/static/media/logo.c4b1b39c8ef2aa43c2c4.png",
     "static/media/logo_white.png": "/static/media/logo_white.c34015cda34571bd88ab.png",
     "index.html": "/index.html",
-    "main.dbfe3342.css.map": "/static/css/main.dbfe3342.css.map",
-    "main.9771bd69.js.map": "/static/js/main.9771bd69.js.map"
+    "main.c36d7b63.css.map": "/static/css/main.c36d7b63.css.map",
+    "main.aad6c95d.js.map": "/static/js/main.aad6c95d.js.map"
   },
   "entrypoints": [
-    "static/css/main.dbfe3342.css",
-    "static/js/main.9771bd69.js"
+    "static/css/main.c36d7b63.css",
+    "static/js/main.aad6c95d.js"
   ]
 }
