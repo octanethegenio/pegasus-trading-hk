@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react'; // Added useContext
 import { Link as RouterLink, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { Link as ScrollLink, animateScroll as scroll, scroller } from 'react-scroll'; // Re-added ScrollLink and scroller
 import styles from './Navbar.module.css';
 import logo from '../../assets/logo.png'; // Pegasus Pink logo
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'; // Import cart icon
+import { CartContext } from '../../context/CartContext'; // Import CartContext
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const [navbar, setNavbar] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { getItemCount } = useContext(CartContext); // Get item count from context
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -46,10 +49,9 @@ const Navbar = () => {
 
   const navLinks = [
     { sectionId: "hero", label: "Home" }, // sectionId used for ScrollLink 'to' and state
-    { sectionId: "about", label: "About Us" },
     { sectionId: "products", label: "Products" },
-    { sectionId: "services", label: "Our Focus" },
-    { sectionId: "why-choose-us", label: "Why Us" },
+    { sectionId: "categories", label: "Categories" }, // Changed from services
+    { sectionId: "about", label: "About Us" },
   ];
 
   return (
@@ -99,6 +101,18 @@ const Navbar = () => {
               onClick={closeMobileMenu}
             >
               Contact
+            </NavLink>
+          </li>
+          <li className={styles.navItem}>
+            <NavLink
+              to="/cart"
+              className={({ isActive }) =>
+                isActive ? `${styles.navLinks} ${styles.activeLink}` : styles.navLinks
+              }
+              onClick={closeMobileMenu}
+            >
+              <ShoppingCartIcon sx={{ fontSize: '1.2rem', verticalAlign: 'middle', marginRight: '4px' }} />
+              Cart ({getItemCount()})
             </NavLink>
           </li>
         </ul>

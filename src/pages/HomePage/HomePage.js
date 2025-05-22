@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom'; // Added useNavigate
+import { useLocation, useNavigate } from 'react-router-dom';
 import { scroller } from 'react-scroll';
 import Hero from '../../components/Hero/Hero';
+import FeaturedDeals from '../../components/FeaturedDeals/FeaturedDeals';
 import About from '../../components/About/About';
-import Services from '../../components/Services/Services';
-import Products from '../../components/Products/Products'; // Added Products import
-import WhyChooseUs from '../../components/WhyChooseUs/WhyChooseUs';
-// import styles from './HomePage.module.css'; // If you need specific page styles
+import Categories from '../../components/Categories/Categories'; // Changed from Services
+import Products from '../../components/Products/Products';
 
 const HomePage = () => {
   const location = useLocation();
-  const navigate = useNavigate(); // Added useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Handle scrolling from route state (used by Navbar when navigating from other pages)
@@ -52,11 +51,10 @@ const HomePage = () => {
   return (
     <>
       <Hero />
+      <FeaturedDeals />
+      <Categories /> 
+      <Products /> {/* Moved Products up */}
       <About />
-      <Services />
-      <Products /> {/* Added Products component */}
-      <WhyChooseUs />
-      {/* Add other sections if needed */}
     </>
   );
 };

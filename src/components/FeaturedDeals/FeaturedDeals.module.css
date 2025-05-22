@@ -1,0 +1,215 @@
+.featuredDealsSection {
+  padding: 40px 0;
+  background-color: var(--background-light);
+}
+
+.featuredDealsContainer { /* Style for the specific container */
+  overflow: visible !important; /* Override global .container if necessary */
+}
+
+.promoBannersContainer {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.promoBanner {
+  flex: 1;
+  border-radius: 15px;
+  padding: 30px;
+  color: white; /* Reverted to white for contrast with gradient */
+  /* background-size and background-position moved to bannerBackgroundImage */
+  position: relative;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bannerBackgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0; /* Behind overlay and content */
+  border-radius: 15px; /* Match parent's border-radius */
+}
+
+.bannerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to top right, var(--primary-color), transparent); /* Diagonal gradient overlay */
+  border-radius: 15px;
+  z-index: 1;
+  /* Removed background-color in favor of background-image for gradient */
+}
+
+.bannerContent {
+  position: relative;
+  z-index: 2;
+}
+
+.bannerTag {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.promoBanner h3 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: white; /* Reverted to white */
+  font-weight: 700;
+}
+
+.promoBanner p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #f0f0f0; /* Reverted to light grey/off-white */
+  max-width: 80%;
+  text-align: left;
+}
+
+.bannerShopNow {
+  color: white; /* Reverted to white */
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.bannerShopNow:hover {
+  color: #eee; /* Reverted to light grey for hover */
+  text-decoration: underline;
+}
+
+.latestDealsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px 10px 0 0;
+  border-bottom: none;
+}
+
+.latestDealsHeader h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin: 0;
+  font-weight: 700;
+}
+
+.timerContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.countdown {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: flex;
+  gap: 5px;
+}
+.countdown span {
+  min-width: 2ch;
+  text-align: center;
+}
+
+.timerLabel {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.dealsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px; /* Increased gap to give more space for hover effect */
+  padding: 20px;
+  border: 2px solid var(--primary-color);
+  overflow: visible; /* Ensure grid itself doesn't clip */
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Card-specific styles like .dealCard, .dealImageContainer etc. are now in ProductCard.module.css */
+
+@media (max-width: 1200px) {
+  .dealsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .promoBannersContainer {
+    flex-direction: column;
+  }
+  .latestDealsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .promoBanner h3 {
+    font-size: 1.5rem;
+  }
+  .dealsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .dealName {
+    font-size: 0.9rem;
+  }
+  .dealSalePrice {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .promoBanner {
+    padding: 20px;
+    min-height: 180px;
+  }
+  .promoBanner h3 {
+    font-size: 1.3rem;
+  }
+  .latestDealsHeader h2 {
+    font-size: 1.3rem;
+  }
+  .countdown {
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+  .dealsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 15px;
+  }
+  .dealInfo {
+    padding: 10px;
+  }
+  .dealHoverContent {
+    padding: 10px; /* Adjusted padding for smaller screens */
+  }
+}

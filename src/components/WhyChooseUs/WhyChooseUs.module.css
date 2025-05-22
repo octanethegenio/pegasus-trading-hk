@@ -1,12 +1,11 @@
-/* src/components/WhyChooseUs/WhyChooseUs.module.css */
 .whyChooseUs {
-  background-color: #f4f4f4; /* Light grey background */
+  background-color: #f4f4f4;
 }
 
 .heading {
   text-align: center;
   margin-bottom: 50px;
-  color: var(--secondary-color); /* Dark heading on light bg */
+  color: var(--secondary-color);
 }
 
 .reasonsGrid {
@@ -46,5 +45,5 @@
   color: #555;
   line-height: 1.7;
   margin-bottom: 0;
-  text-align: center; /* Override global justify for card paragraphs */
+  text-align: center;
 }

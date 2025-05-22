@@ -21,20 +21,21 @@ const Footer = () => {
           </RouterLink>
           <p>Pegasus Trading Global HK Limited</p>
           <p className={styles.tagline}>Connecting the world with quality electronics.</p>
-          <p className={styles.summary}>We specialize in sourcing and distributing a wide array of innovative electronic accessories and components to meet the dynamic needs of the global market.</p>
+          <p className={styles.summary}>We specialize in sourcing and distributing a wide array of innovative electronic accessories and components to meet the needs of the global market.</p>
         </div>
         <div className={styles.footerLinks}>
           <h4>Quick Links</h4>
           <ul>
             <li><RouterLink to="/#about" onClick={() => scroll.scrollTo(document.getElementById('about').offsetTop - 80)}>About Us</RouterLink></li>
-            <li><RouterLink to="/#services" onClick={() => scroll.scrollTo(document.getElementById('services').offsetTop - 80)}>Our Focus</RouterLink></li>
+            <li><RouterLink to="/#products" onClick={() => scroll.scrollTo(document.getElementById('products').offsetTop - 80)}>Products</RouterLink></li>
+            <li><RouterLink to="/#categories" onClick={() => scroll.scrollTo(document.getElementById('categories').offsetTop - 80)}>Categories</RouterLink></li> {/* Changed from services */}
             <li><RouterLink to="/contact">Contact Us</RouterLink></li>
             {/* Add more links like Privacy Policy, Terms if needed */}
           </ul>
         </div>
         <div className={styles.footerContact}>
           <h4>Get In Touch</h4>
-          <p>Unit B1, 21/f, Gaylord Comm Building,<br/>114-118 Lockhart Road, Wan Chai, Hong Kong</p>
+          <p>Unit B1, 21/f, Gaylord Comm Building, 114-118 Lockhart Road, Wan Chai, Hong Kong</p>
           <p>Email: info@pegasustradinghk.com</p>
           {/* <p>Phone: +852 XXXX XXXX</p> */}
         </div>

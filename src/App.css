@@ -1,11 +1,12 @@
-/* src/App.css */
 :root {
-  --primary-color: #CF2C61;
-  --secondary-color: #1a1a1a;
-  --text-light: #f0f0f0;
-  --text-dark: #333;
+  --primary-color: #CE2D63;
+  --secondary-color: #212529;
+  --text-light: #FFFFFF;
+  --text-dark: #212529;
   --background-light: #ffffff;
-  --background-dark: #101010; /* Slightly lighter than secondary for depth */
+  --background-beige: #FBF5EE;
+  --border-light: #DEE2E6;
+  --background-dark: #101010;
   --font-family: 'Poppins', sans-serif;
 }
 
@@ -20,13 +21,13 @@ body {
   line-height: 1.6;
   color: var(--text-dark);
   background-color: var(--background-light);
-  overscroll-behavior-y: contain; /* Prevents body scroll when modal/menu is open */
+  overscroll-behavior-y: contain;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   margin-bottom: 0.75rem;
-  color: var(--primary-color);
+  color: var(--text-dark);
 }
 
 h1 { font-size: 2.8rem; line-height: 1.2; }
@@ -36,7 +37,7 @@ h3 { font-size: 1.8rem; }
 p {
   margin-bottom: 1rem;
   font-size: 1rem;
-  text-align: justify;
+  text-align: left;
 }
 
 a {
@@ -48,11 +49,11 @@ a {
   max-width: 1200px;
   margin: auto;
   padding: 0 2rem;
-  overflow: hidden; /* Clear floats */
+  overflow: hidden;
 }
 
 section {
-  padding: 100px 0; /* Increased padding */
+  padding: 100px 0;
 }
 
 .section-dark {
@@ -61,10 +62,10 @@ section {
 }
 
 .section-dark h1, .section-dark h2, .section-dark h3 {
-  color: var(--text-light); /* Or primary color for contrast */
+  color: var(--text-light);
 }
 .section-dark p {
-  color: #ccc; /* Slightly lighter for readability on dark bg */
+  color: #ccc;
 }
 
 
@@ -84,7 +85,7 @@ section {
 }
 
 .btn:hover {
-  background: #B02451; /* Darker shade of new primary #CF2C61 */
+  background: #A92450; /* Darker shade of #CE2D63 */
   transform: translateY(-2px);
 }
 
@@ -99,12 +100,11 @@ section {
   color: var(--text-light);
 }
 
-/* Responsive Typography */
 @media (max-width: 768px) {
   h1 { font-size: 2.2rem; }
   h2 { font-size: 1.8rem; }
   h3 { font-size: 1.5rem; }
   p { font-size: 0.95rem; }
-  section { padding: 70px 0; } /* Increased padding for mobile */
+  section { padding: 70px 0; }
   .container { padding: 0 1rem; }
 }

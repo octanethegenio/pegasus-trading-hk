@@ -1,0 +1,107 @@
+.categoriesSection {
+  padding: 50px 0; /* Slightly adjusted padding */
+  background-color: var(--background-light);
+}
+
+.sectionTitle {
+  font-size: 1.8rem; /* Adjusted size to better match example */
+  font-weight: 600; /* Bold as in example */
+  color: var(--text-dark);
+  margin-bottom: 25px; /* Increased space below title */
+  padding-bottom: 10px; /* Space for the border */
+  border-bottom: 1px solid #dee2e6; /* Lighter border */
+  text-align: left; 
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); 
+  gap: 25px; /* Slightly increased gap */
+}
+
+.categoryCard {
+  background-color: #fff;
+  border: 1px solid #e9ecef; 
+  border-radius: 12px; 
+  padding: 25px 20px; /* Adjusted padding */
+  text-align: left; /* Changed to left alignment */
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04); /* Softer shadow */
+}
+
+.categoryCard:hover {
+  transform: translateY(-6px); /* Slightly more lift */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08); /* Enhanced shadow on hover */
+}
+
+.categoryImageContainer {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Enforce 1:1 aspect ratio */
+  margin-bottom: 20px; /* More space below image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa; 
+  border-radius: 8px; 
+  padding: 10px; /* Padding within the image container */
+}
+
+.categoryImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; 
+}
+
+.categoryTitle {
+  font-size: 1.05rem; /* Slightly adjusted */
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px; /* Adjusted space */
+  /* text-align: left; already handled by .categoryCard */
+}
+
+/* .categoryItemCount style removed as it's no longer used */
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .categoriesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Allow more flexibility */
+  }
+}
+
+@media (max-width: 992px) {
+  .categoriesGrid {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+  .sectionTitle {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .categoriesGrid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  /* aspect-ratio will handle height automatically */
+  .categoryTitle {
+    font-size: 1rem;
+  }
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .categoriesGrid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+  }
+  .categoryCard {
+    padding: 20px 15px;
+  }
+  /* aspect-ratio will handle height automatically */
+  .sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+}

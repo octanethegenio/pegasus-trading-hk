@@ -1,0 +1,414 @@
+/* General Page Styles */
+.cartPage {
+  padding: 120px 15px 30px; /* Added more top padding (120px), kept horizontal (15px) and bottom (30px) */
+  background-color: #ffffff; /* Cleaner background */
+  min-height: calc(100vh - 200px); /* Adjust based on actual header/footer height */
+  display: flex;
+  flex-direction: column;
+}
+
+.container { /* Ensure container class is used in CartPage.js if not already */
+  width: 100%;
+  max-width: 1200px; /* Standard container width */
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Cart Header */
+.cartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e9e9e9; /* Lighter border */
+}
+
+.cartTitle {
+  font-size: 2.2rem; /* Slightly larger title */
+  color: #2c3e50; /* Darker, more professional color */
+  font-weight: 700; /* Bolder */
+}
+
+.clearCartButton {
+  background-color: #CE2D63; /* Primary theme color */
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px; /* Slightly more rounded */
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.25s ease;
+}
+
+.clearCartButton:hover {
+  background-color: #b82857; /* Darker shade of primary color */
+}
+
+/* Cart Items List */
+.cartItemsList {
+  margin-bottom: 30px;
+}
+
+.cartItem {
+  display: grid;
+  grid-template-columns: 100px 1fr auto auto auto; /* Image, Details, Price, Quantity, Total, Actions */
+  gap: 20px;
+  align-items: center;
+  background-color: #fdfdfd; /* Very light grey for item background */
+  padding: 20px;
+  border: 1px solid #f0f0f0; /* Subtle border */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Softer shadow */
+  margin-bottom: 20px; /* Increased spacing */
+}
+
+.itemImageContainer {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa; /* Light background for image */
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.itemImage {
+  max-width: 90%; /* Prevent image from touching borders */
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Space between name and price */
+}
+
+.itemName {
+  font-size: 1.15rem; /* Slightly larger */
+  font-weight: 600;
+  color: #34495e; /* Theme-consistent dark blue/grey */
+  line-height: 1.4;
+}
+
+.itemPrice {
+  font-size: 1rem;
+  color: #7f8c8d; /* Softer grey for price */
+}
+
+.itemQuantity {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center quantity controls */
+}
+
+.quantityAdjustButton {
+  background-color: #f0f2f5; /* Lighter grey */
+  border: 1px solid #d1d5db; /* Softer border */
+  color: #374151; /* Darker text for better contrast */
+  padding: 6px 12px; /* Adjusted padding */
+  cursor: pointer;
+  font-size: 1.1rem; /* Slightly larger for easier clicking */
+  border-radius: 5px;
+  transition: background-color 0.2s, border-color 0.2s;
+  line-height: 1;
+}
+
+.quantityAdjustButton:hover {
+  background-color: #e5e7eb;
+  border-color: #adb5bd;
+}
+
+.quantityAdjustButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.quantityInput {
+  width: 55px; /* Slightly wider */
+  text-align: center;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  padding: 7px 0; /* Adjusted padding */
+  margin: 0 8px; /* Increased margin */
+  font-size: 1rem;
+  font-weight: 500;
+  color: #374151;
+  -moz-appearance: textfield;
+}
+
+.quantityInput::-webkit-outer-spin-button,
+.quantityInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.itemTotal {
+  font-size: 1.15rem;
+  font-weight: 700; /* Bolder total */
+  color: #2c3e50; /* Consistent dark color */
+  text-align: right;
+  min-width: 80px; /* Ensure space */
+}
+
+.itemActions {
+  text-align: right;
+}
+
+.removeItemButton {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  padding: 8px; /* Larger click area */
+  transition: color 0.2s, transform 0.2s;
+  display: flex; /* For centering icon if needed */
+  align-items: center;
+  justify-content: center;
+}
+
+.removeItemButton:hover {
+  color: #c0392b;
+  transform: scale(1.1); /* Slight scale effect */
+}
+
+/* Cart Summary */
+.cartSummary {
+  background-color: #f8f9fa; /* Light grey for summary box */
+  padding: 25px 30px; /* Adjusted padding */
+  border-radius: 8px;
+  border: 1px solid #e9ecef; /* Subtle border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  margin-top: 30px; /* Space from items list */
+  margin-left: auto; /* Align to the right */
+  max-width: 400px; /* Decrease width of the summary box */
+  width: 100%; /* Ensure it takes up to max-width but is responsive */
+}
+
+.summaryDetails {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.summaryTitle {
+  font-size: 1.6rem; /* Adjusted size */
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dde2e7; /* Lighter border */
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.05rem; /* Slightly larger text */
+  color: #34495e;
+  margin-bottom: 12px;
+}
+
+.summaryRow span:last-child {
+  font-weight: 500;
+}
+
+.summaryTotalRow {
+  font-size: 1.3rem; /* Larger total */
+  font-weight: 700;
+  color: #2c3e50;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #dde2e7; /* More prominent top border */
+}
+
+/* Buttons */
+.themeButton { /* Common style for main action buttons */
+  background-color: #CE2D63; /* Primary theme color */
+  color: white;
+  border: none;
+  padding: 14px 28px; /* Generous padding */
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.25s ease, transform 0.1s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Space for icon */
+  width: 100%; /* Full width within its container */
+}
+
+.themeButton:hover {
+  background-color: #b82857; /* Darker shade of primary color */
+  transform: translateY(-1px); /* Slight lift */
+}
+
+.contactToOrderButton {
+  composes: themeButton; /* Inherit base styles */
+  margin-bottom: 20px;
+}
+
+.continueShoppingLink, /* This is the link below the summary */
+.continueShoppingButton { /* This is the button in the empty cart */
+  composes: themeButton; 
+  text-decoration: none;
+}
+
+/* Specific for the button in empty cart */
+.emptyCartContainer .continueShoppingButton {
+  background-color: #6c757d; /* Secondary button color - grey */
+  width: auto; /* Make button not full width */
+  padding-left: 30px; /* Adjust padding for auto width */
+  padding-right: 30px; /* Adjust padding for auto width */
+}
+.emptyCartContainer .continueShoppingButton:hover {
+  background-color: #5a6268; /* Darker grey */
+}
+
+/* Specific for the link below summary */
+.cartSummary .continueShoppingLink {
+   background-color: transparent;
+   color: #007bff;
+   padding: 10px 0; 
+   width: auto; /* Not full width */
+   font-weight: 500;
+   justify-content: flex-start; /* Align icon and text to the left */
+}
+.cartSummary .continueShoppingLink:hover {
+   background-color: transparent;
+   color: #0056b3;
+   text-decoration: underline;
+}
+
+
+/* Empty Cart Styles */
+.emptyCartContainer {
+  text-align: center;
+  padding: 80px 20px; /* More padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1; /* Takes remaining space */
+}
+
+.emptyCartContainer .cartTitle { /* Re-style title for empty cart */
+  margin-bottom: 15px;
+}
+
+.emptyCartContainer p {
+  font-size: 1.1rem;
+  color: #555c63; /* Softer grey */
+  margin-bottom: 35px; /* More space before button */
+  /* max-width: 450px; */ /* Removed to allow text on one line if space permits */
+  line-height: 1.6;
+  white-space: nowrap; /* Ensure it stays on one line */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .cartItem {
+    /* Adjust grid for tablets if needed, current one might be okay */
+    grid-template-columns: 80px 1fr auto auto auto;
+    gap: 15px;
+  }
+  .cartTitle {
+    font-size: 2rem;
+  }
+  .summaryTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cartPage {
+    padding: 100px 10px 20px; /* Increased top padding for mobile */
+  }
+  .cartHeader {
+    flex-direction: column;
+    align-items: stretch; /* Stretch items */
+    gap: 15px;
+  }
+  .clearCartButton {
+    width: 100%; /* Full width on mobile */
+  }
+  .cartItem {
+    grid-template-columns: 80px 1fr; /* Simpler two-column layout */
+    grid-template-areas:
+      "image details"
+      "quantity quantity" /* Quantity spans full width below */
+      "total total"       /* Total spans full width */
+      "actions actions";    /* Actions span full width */
+    padding: 15px;
+    row-gap: 15px; /* Add row gap */
+  }
+  .itemImageContainer {
+    grid-area: image;
+    width: 80px; /* Fixed size */
+    height: 80px;
+  }
+  .itemDetails { grid-area: details; }
+  .itemQuantity {
+    grid-area: quantity;
+    justify-content: space-between; /* Space out controls */
+  }
+  .quantityInput {
+    flex-grow: 1; /* Allow input to take available space */
+    margin: 0 10px;
+  }
+  .itemTotal {
+    grid-area: total;
+    text-align: right; /* Keep total to the right */
+    font-size: 1.1rem;
+    margin-top: 0;
+  }
+  .itemActions {
+    grid-area: actions;
+    text-align: right; /* Keep actions to the right */
+    margin-top: 0;
+  }
+
+  .cartSummary {
+    padding: 20px;
+  }
+  .summaryTitle {
+    font-size: 1.4rem;
+  }
+  .themeButton, .contactToOrderButton, .continueShoppingButton {
+    font-size: 1rem; /* Adjust button font size */
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cartTitle {
+    font-size: 1.7rem;
+  }
+  .itemName {
+    font-size: 1rem;
+  }
+  .itemPrice, .itemTotal {
+    font-size: 0.95rem;
+  }
+  .quantityInput {
+    width: 45px;
+    font-size: 0.9rem;
+    padding: 6px 0;
+  }
+  .quantityAdjustButton {
+    padding: 5px 10px;
+    font-size: 1rem;
+  }
+  .cartItem {
+     grid-template-columns: 65px 1fr; /* Smaller image on very small screens */
+  }
+  .itemImageContainer {
+    width: 65px;
+    height: 65px;
+  }
+}

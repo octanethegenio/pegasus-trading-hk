@@ -1,39 +1,33 @@
-/* src/components/Footer/Footer.module.css */
 .footer {
-  background-color: var(--secondary-color);
+  background-color: var(--text-dark);
   color: var(--text-light);
-  padding: 70px 0 30px; /* Increased padding */
+  padding: 70px 0 30px;
 }
 
 .footerContainer {
   display: grid;
-  /* Default to single column for mobile */
   grid-template-columns: 1fr; 
-  gap: 30px; /* Base gap for mobile */
+  gap: 30px;
   margin-bottom: 40px;
 }
 
-/* Tablet: 2 columns */
 @media (min-width: 768px) {
   .footerContainer {
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px; /* Tablet gap */
+    gap: 40px;
   }
 }
 
-/* Desktop: 4 columns */
 @media (min-width: 1024px) {
   .footerContainer {
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px; /* Desktop gap, can be same or different */
+    gap: 30px;
   }
 }
 
 .footerLogo {
-  width: 120px; /* Adjust as needed */
+  width: 120px;
   margin-bottom: 15px;
-  /* Filter if you don't have a white logo variant and your primary logo.png is dark */
-  /* filter: brightness(0) invert(1);  */
 }
 .footerBrand p {
     color: #b0b0b0;
@@ -109,5 +103,5 @@
 }
 .footerBottom p {
     margin-bottom: 0;
-    text-align: center; /* Ensure centering */
+    text-align: center;
 }

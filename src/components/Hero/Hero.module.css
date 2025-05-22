@@ -1,47 +1,253 @@
-/* src/components/Hero/Hero.module.css */
 .hero {
-  /* Default solid background if no image */
-  background-color: var(--secondary-color); 
-  min-height: 100vh; /* Full viewport height */
+  background-color: var(--background-light); /* Overall section background - very light/white */
+  padding: 150px 0 40px; /* Significantly increased top padding */
+  overflow: hidden;
+}
+
+.heroOuterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* Space between the main hero card and the features below */
+}
+
+/* This is the main "card" for the hero content */
+.heroMainContent {
+  display: flex;
+  align-items: center; /* Vertically align items in the card */
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px; /* Generous padding inside the card */
+  background-color: #FAF7F2; /* Light beige background for the card */
+  border-radius: 20px; /* More pronounced rounded corners for the card */
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+.heroTextContentNew {
+  flex: 0 0 58%; /* Text takes about 58% of the card width */
+  padding-right: 3rem; /* Space between text and image */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.heroPremierBanner {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 18px; /* Slightly more padding */
+  border-radius: 20px;
+  font-size: 0.85rem; /* Slightly larger */
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 2rem; /* More space below banner */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.heroTextContentNew h1 {
+  font-size: 3rem; /* Larger headline */
+  font-weight: 700;
+  color: #222; /* Darker, more impactful text color */
+  line-height: 1.25;
+  margin-bottom: 1.25rem; /* Adjusted spacing */
+}
+
+.heroDescription {
+  font-size: 1.05rem; /* Slightly larger description */
+  color: #505050; /* Softer text color */
+  line-height: 1.65;
+  margin-bottom: 2rem; /* More space before price */
+}
+
+.heroPriceContainer {
+  margin-bottom: 2rem; /* More space before button */
+  display: flex;
+  align-items: baseline;
+}
+
+.heroOriginalPrice {
+  font-size: 1.25rem; /* Slightly larger */
+  color: #777;
+  text-decoration: line-through;
+  margin-right: 12px; /* More space */
+}
+
+.heroDiscountedPrice {
+  font-size: 2rem; /* Larger discounted price */
+  color: #222;
+  font-weight: 700;
+}
+
+.heroButtonNew {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 14px 30px; /* Larger button padding */
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem; /* Slightly larger button text */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+}
+
+.heroButtonNew:hover {
+  background-color: #B02451;
+  transform: translateY(-3px); /* More pronounced hover effect */
+}
+
+.heroImageNew {
+  flex: 0 0 40%; /* Image takes about 40% */
+  max-width: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  color: var(--text-light);
-  padding: 100px 0; /* Add padding for content */
-  
-  /* Uncomment if using background image */
-  /* background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; */
+  position: relative; /* For potential pseudo-elements or decorations */
 }
 
-.heroContent {
-  max-width: 800px;
+.heroImageNew img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain; /* Ensure whole image is visible */
 }
 
-.heroContent h1 {
-  font-size: 3.5rem; /* Larger for hero */
-  margin-bottom: 1.5rem;
-  color: var(--text-light);
-  line-height: 1.2;
+/* Features Section - sits on the .hero (lighter) background */
+.heroFeatures {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px 0; /* Padding for the features section itself */
+  /* background-color: transparent; Inherits .hero background */
 }
 
-.heroContent p {
-  font-size: 1.2rem;
-  margin-bottom: 2.5rem;
-  color: #e0e0e0; /* Lighter than default p on dark */
-  text-align: center; /* Override global justify for hero paragraph */
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 18px; /* More space between icon and text */
+  text-align: left;
+  flex: 1;
+  padding: 0 20px; /* Padding within each feature item */
+  max-width: 320px;
+}
+
+.featureItem svg { /* Targeting the icon directly for color if not overridden by sx prop */
+  color: var(--primary-color) !important; /* Ensure primary color for icons */
+}
+
+.featureItem h4 {
+  font-size: 1.15rem; /* Slightly larger feature title */
+  color: #333;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.featureItem p {
+  font-size: 0.95rem; /* Slightly larger feature text */
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .heroMainContent {
+    flex-direction: column;
+    padding: 30px; /* Adjust padding for stacked layout */
+  }
+  .heroTextContentNew {
+    flex-basis: auto; /* Allow natural height */
+    max-width: 100%;
+    padding-right: 0;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .heroImageNew {
+    flex-basis: auto;
+    max-width: 60%; /* Image can be a bit smaller when stacked */
+    margin-top: 0;
+  }
+  .heroTextContentNew h1 {
+    font-size: 2.6rem;
+  }
+  .heroFeatures {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Increased gap for stacked features */
+  }
+  .featureItem {
+    max-width: 90%;
+    text-align: center;
+    justify-content: center; /* Center icon and text block */
+  }
 }
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 80vh;
+    padding: 130px 0 30px; /* Significantly increased top padding for smaller screens */
   }
-  .heroContent h1 {
-    font-size: 2.5rem;
+  .heroOuterContainer {
+    gap: 30px;
   }
-  .heroContent p {
+  .heroMainContent {
+    padding: 25px 20px; /* Smaller padding for mobile card */
+    border-radius: 15px;
+  }
+  .heroPremierBanner {
+    font-size: 0.8rem;
+    padding: 7px 15px;
+    margin-bottom: 1.5rem;
+  }
+  .heroTextContentNew h1 {
+    font-size: 2.2rem;
+  }
+  .heroDescription {
     font-size: 1rem;
+  }
+  .heroDiscountedPrice {
+    font-size: 1.7rem;
+  }
+  .heroButtonNew {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+  .heroImageNew {
+    max-width: 70%;
+  }
+  .featureItem h4 {
+    font-size: 1.1rem;
+  }
+  .featureItem p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTextContentNew h1 {
+    font-size: 1.9rem;
+  }
+  .heroPremierBanner {
+    font-size: 0.75rem;
+  }
+  .heroDescription {
+    font-size: 0.95rem;
+  }
+  .heroDiscountedPrice {
+    font-size: 1.5rem;
+  }
+  .heroButtonNew {
+    width: 100%; /* Make button full width on very small screens */
+    justify-content: center;
+  }
+  .featureItem {
+    gap: 12px;
+  }
+  .featureItem svg {
+    font-size: 2.2rem !important; /* Adjust icon size for mobile */
   }
 }

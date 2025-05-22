@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './ContactForm.module.css';
 
-const ContactForm = () => {
+const ContactForm = ({ cartItems = [] }) => { // Accept cartItems as a prop
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -9,6 +9,26 @@ const ContactForm = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (cartItems && cartItems.length > 0) {
+      const itemsList = cartItems.map((item, index) => `  ${index + 1}. ${item.name} (Quantity: ${item.quantity})`).join('\n'); // Numbered list
+      const prefilledMessage = `Hello Pegasus Trading Team,\n\nI would like to inquire about placing an order for the following items from my cart:\n\n--- MY ORDER ITEMS ---\n${itemsList}\n----------------------\n\nCould you please provide information on how to proceed with completing this order?\n\nThank you for your assistance.`;
+      setFormData(prevState => ({
+        ...prevState,
+        subject: 'Order Inquiry - Items from Cart', // Updated subject
+        message: prefilledMessage
+      }));
+    } else {
+      // If cart is empty or not provided, ensure message is clear or default
+      // This part can be adjusted if a different default message is needed when no cart items
+      setFormData(prevState => ({
+        ...prevState,
+        // subject: '', // Clear subject if no cart items, or keep as is
+        // message: '' // Clear message if no cart items, or keep as is
+      }));
+    }
+  }, [cartItems]); // Rerun effect if cartItems change
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -78,7 +98,7 @@ const ContactForm = () => {
           <textarea
             id="message"
             name="message"
-            rows="6"
+            rows="8" 
             value={formData.message}
             onChange={handleChange}
             required

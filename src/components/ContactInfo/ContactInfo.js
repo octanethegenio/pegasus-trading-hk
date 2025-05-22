@@ -9,7 +9,7 @@ const ContactInfo = () => {
     <div className={styles.contactInfoContainer}>
       <h2>Contact Information</h2>
       <p className={styles.introText}>
-        We're here to help and answer any question you might have regarding our products, services, or potential partnerships. Our team is ready to provide you with the information and support you need. We look forward to hearing from you!
+        Have questions about our products, services, or partnerships? Our team is ready to provide the support you need. We look forward to hearing from you!
       </p>
       <div className={styles.infoItem}>
         <LocationOnIcon className={styles.icon} sx={{ fontSize: '1.8rem' }} />
