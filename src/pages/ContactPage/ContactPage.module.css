@@ -24,8 +24,3 @@
     grid-template-columns: 3fr 2fr; /* Form takes more space */
   }
 }
-
-.formWrapper,
-.infoWrapper {
-  /* Styles for wrappers if needed, e.g., ensuring consistent height */
-}

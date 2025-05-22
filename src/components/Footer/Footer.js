@@ -30,14 +30,12 @@ const Footer = () => {
             <li><RouterLink to="/#products" onClick={() => scroll.scrollTo(document.getElementById('products').offsetTop - 80)}>Products</RouterLink></li>
             <li><RouterLink to="/#categories" onClick={() => scroll.scrollTo(document.getElementById('categories').offsetTop - 80)}>Categories</RouterLink></li> {/* Changed from services */}
             <li><RouterLink to="/contact">Contact Us</RouterLink></li>
-            {/* Add more links like Privacy Policy, Terms if needed */}
           </ul>
         </div>
         <div className={styles.footerContact}>
           <h4>Get In Touch</h4>
           <p>Unit B1, 21/f, Gaylord Comm Building, 114-118 Lockhart Road, Wan Chai, Hong Kong</p>
           <p>Email: info@pegasustradinghk.com</p>
-          {/* <p>Phone: +852 XXXX XXXX</p> */}
         </div>
         <div className={styles.footerSocial}>
             <h4>Follow Us</h4>

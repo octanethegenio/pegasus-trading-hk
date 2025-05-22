@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './ContactInfo.module.css';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-// import PhoneIcon from '@mui/icons-material/Phone'; // Removed as it's no longer used
 import EmailIcon from '@mui/icons-material/Email';
 
 const ContactInfo = () => {
@@ -29,8 +28,6 @@ const ContactInfo = () => {
           <p><a href="mailto:sales@pegasustradinghk.com">sales@pegasustradinghk.com</a></p>
         </div>
       </div>
-      {/* Phone number section removed as per request */}
-       {/* Optional: Google Map Embed */}
        <div className={styles.mapContainer}>
         <h3>Find Us On Map</h3>
         <iframe

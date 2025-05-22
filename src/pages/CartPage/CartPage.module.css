@@ -7,13 +7,6 @@
   flex-direction: column;
 }
 
-.container { /* Ensure container class is used in CartPage.js if not already */
-  width: 100%;
-  max-width: 1200px; /* Standard container width */
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
 /* Cart Header */
 .cartHeader {
   display: flex;

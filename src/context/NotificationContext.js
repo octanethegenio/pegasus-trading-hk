@@ -1,20 +1,20 @@
-import React, { createContext, useState, useCallback } from 'react';
+import React, { createContext, useState, useCallback, useRef } from 'react';
 
 export const NotificationContext = createContext();
 
 export const NotificationProvider = ({ children }) => {
   const [notification, setNotification] = useState(null); // { message: '', type: '' }
   const [isVisible, setIsVisible] = useState(false);
-  let timerId = null;
+  const timerId = useRef(null);
 
   const showNotification = useCallback((message, type = 'success') => {
-    if (timerId) {
-      clearTimeout(timerId);
+    if (timerId.current) {
+      clearTimeout(timerId.current);
     }
     setNotification({ message, type });
     setIsVisible(true);
 
-    timerId = setTimeout(() => {
+    timerId.current = setTimeout(() => {
       setIsVisible(false);
       // Delay hiding to allow for fade-out animation
       setTimeout(() => setNotification(null), 300); 
@@ -22,8 +22,8 @@ export const NotificationProvider = ({ children }) => {
   }, []);
 
   const hideNotification = useCallback(() => {
-    if (timerId) {
-      clearTimeout(timerId);
+    if (timerId.current) {
+      clearTimeout(timerId.current);
     }
     setIsVisible(false);
     setTimeout(() => setNotification(null), 300);
