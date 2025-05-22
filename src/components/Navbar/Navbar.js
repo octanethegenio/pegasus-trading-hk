@@ -50,7 +50,6 @@ const Navbar = () => {
   const navLinks = [
     { sectionId: "hero", label: "Home" }, // sectionId used for ScrollLink 'to' and state
     { sectionId: "products", label: "Products" },
-    { sectionId: "categories", label: "Categories" }, // Changed from services
     { sectionId: "about", label: "About Us" },
   ];
 
