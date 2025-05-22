@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.22311635.css",
-    "main.js": "/static/js/main.fe38d4c0.js",
+    "main.js": "/static/js/main.a5a2cebf.js",
     "static/media/Boombox.png": "/static/media/Boombox.d7eea44d52272d28976e.png",
     "static/media/prod-twsbuds.png": "/static/media/prod-twsbuds.a11bc0e0362fca54b23a.png",
     "static/media/Defender.png": "/static/media/Defender.378571f7cb40c0761f48.png",
@@ -26,10 +26,10 @@
     "static/media/cover.png": "/static/media/cover.7c5c6284b3b22f79780d.png",
     "index.html": "/index.html",
     "main.22311635.css.map": "/static/css/main.22311635.css.map",
-    "main.fe38d4c0.js.map": "/static/js/main.fe38d4c0.js.map"
+    "main.a5a2cebf.js.map": "/static/js/main.a5a2cebf.js.map"
   },
   "entrypoints": [
     "static/css/main.22311635.css",
-    "static/js/main.fe38d4c0.js"
+    "static/js/main.a5a2cebf.js"
   ]
 }
