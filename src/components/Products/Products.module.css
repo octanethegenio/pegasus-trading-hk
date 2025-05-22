@@ -1,0 +1,89 @@
+/* src/components/Products/Products.module.css */
+.productsSection {
+  text-align: center;
+  padding: 60px 0; /* Add some padding to the section */
+  background-color: var(--background-light); /* Assuming you have a light background variable */
+}
+
+.productsSection h2 {
+  margin-bottom: 50px;
+  color: var(--text-dark); /* Text color for light background */
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.productCard {
+  background: #ffffff; /* White background for cards on a light section */
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0; /* Light border for the card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-color);
+}
+
+.productImageContainer {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Enforce 1:1 aspect ratio */
+  margin-bottom: 20px;
+  overflow: hidden; /* Ensure image fits well */
+  border-radius: 8px; /* Slightly rounded corners for the image container */
+  background-color: #f0f0f0; /* Placeholder background if image is missing or loading */
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover ensures the image fills the container, might crop */
+  /* Consider 'contain' if you want to see the whole image without cropping:
+  object-fit: contain;
+  */
+}
+
+.productCard h3 {
+  font-size: 1.2rem; /* Slightly smaller than service card title */
+  margin-bottom: 10px;
+  color: var(--text-dark); /* Dark text for readability on light card */
+  text-align: center;
+  min-height: 3.6em; /* Reserve space for up to 3 lines of text to prevent layout shifts */
+  line-height: 1.2em;
+  overflow: hidden; /* Hide overflow if name is too long */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+}
+
+/* Responsive adjustments */
+@media (min-width: 600px) and (max-width: 899px) {
+  .productsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* No specific height needed for productImageContainer, aspect-ratio handles it */
+  .productCard h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 599px) {
+  .productsGrid {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+  /* No specific height needed for productImageContainer, aspect-ratio handles it */
+   .productCard h3 {
+    font-size: 1.15rem;
+    min-height: 0; /* Allow dynamic height for product names on mobile */
+    -webkit-line-clamp: unset; /* Remove line clamp on mobile if desired */
+  }
+}

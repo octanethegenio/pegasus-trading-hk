@@ -47,6 +47,7 @@ const Navbar = () => {
   const navLinks = [
     { sectionId: "hero", label: "Home" }, // sectionId used for ScrollLink 'to' and state
     { sectionId: "about", label: "About Us" },
+    { sectionId: "products", label: "Products" },
     { sectionId: "services", label: "Our Focus" },
     { sectionId: "why-choose-us", label: "Why Us" },
   ];

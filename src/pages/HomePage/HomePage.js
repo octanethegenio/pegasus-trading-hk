@@ -4,6 +4,7 @@ import { scroller } from 'react-scroll';
 import Hero from '../../components/Hero/Hero';
 import About from '../../components/About/About';
 import Services from '../../components/Services/Services';
+import Products from '../../components/Products/Products'; // Added Products import
 import WhyChooseUs from '../../components/WhyChooseUs/WhyChooseUs';
 // import styles from './HomePage.module.css'; // If you need specific page styles
 
@@ -53,6 +54,7 @@ const HomePage = () => {
       <Hero />
       <About />
       <Services />
+      <Products /> {/* Added Products component */}
       <WhyChooseUs />
       {/* Add other sections if needed */}
     </>
