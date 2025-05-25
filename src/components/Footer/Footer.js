@@ -36,6 +36,7 @@ const Footer = () => {
           <h4>Get In Touch</h4>
           <p>Unit B1, 21/f, Gaylord Comm Building, 114-118 Lockhart Road, Wan Chai, Hong Kong</p>
           <p>Email: info@pegasustradinghk.com</p>
+          <p>Phone: +852 5434 0615</p>
         </div>
         <div className={styles.footerSocial}>
             <h4>Follow Us</h4>

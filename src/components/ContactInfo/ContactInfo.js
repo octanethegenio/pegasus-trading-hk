@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './ContactInfo.module.css';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
 
 const ContactInfo = () => {
   return (
@@ -26,6 +27,13 @@ const ContactInfo = () => {
           <h3>Email Us</h3>
           <p><a href="mailto:info@pegasustradinghk.com">info@pegasustradinghk.com</a></p>
           <p><a href="mailto:sales@pegasustradinghk.com">sales@pegasustradinghk.com</a></p>
+        </div>
+      </div>
+      <div className={styles.infoItem}>
+        <PhoneIcon className={styles.icon} sx={{ fontSize: '1.8rem' }} />
+        <div>
+          <h3>Call Us</h3>
+          <p>+852 5434 0615</p>
         </div>
       </div>
        <div className={styles.mapContainer}>
